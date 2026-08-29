@@ -6,12 +6,14 @@ the manuscript.
 
 ## Files
 
-- `zoomin3D.m`: Main simulation code.
-- `demo.m`: Demonstration script that runs the simulation and displays the CAH
-  interval for a representative direction.
+- `zoomin3D.m`: Main simulation code for computing the contact angle.
+- `demo.m`: A quick demonstration of the directional CAH calculation.
 
 ## Usage
 
-Run `demo.m` in MATLAB. The script runs `zoomin3D.m`, generates the numerical
-data, and displays the receding and advancing contact angles for the selected
-direction.
+Run `demo.m` in MATLAB. The demo runs a representative case with time step
+`tau = 1e-2` and spatial resolution `N = 64`, and displays the receding and
+advancing contact angles for a selected direction.
+
+The simulations used in the manuscript were performed with higher spatial
+resolution.
