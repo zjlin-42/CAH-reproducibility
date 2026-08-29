@@ -2,28 +2,48 @@
 
 tau = 1e-2;
 N = 64;
+
+% Sampled diagonal direction: atan2(6,6) = pi/4.
 p = 6;
 q = 6;
 
-% Reduce the direction to relatively prime integers
+% Reduce the direction to relatively prime integers.
 gcd_pq = gcd(p,q);
 p = p/gcd_pq;
 q = q/gcd_pq;
 
-% Receding case
-zoomin3D(tau, N, "right", p, q);
-filename_rec = sprintf('3D_right_%d_%d_1e-3_zoomin.mat', p, q);
+% Use the same time-step label as zoomin3D.m.
+tau_label = regexprep( ...
+    sprintf('%.0e',tau), ...
+    'e([-+])0*(\d+)', ...
+    'e$1$2');
+
+% Receding case.
+zoomin3D(tau,N,"right",p,q);
+filename_rec = sprintf( ...
+    '3D_right_%d_%d_%s_zoomin.mat', ...
+    p,q,tau_label);
 data_rec = load(filename_rec);
 theta_rec = data_rec.final_contact_angle;
 
-% Advancing case
-zoomin3D(tau, N, "left", p, q);
-filename_adv = sprintf('3D_left_%d_%d_1e-3_zoomin.mat', p, q);
+% Advancing case.
+zoomin3D(tau,N,"left",p,q);
+filename_adv = sprintf( ...
+    '3D_left_%d_%d_%s_zoomin.mat', ...
+    p,q,tau_label);
 data_adv = load(filename_adv);
 theta_adv = data_adv.final_contact_angle;
 
-% Display the results
-fprintf('Direction: atan2(%d,%d) = %.6f rad\n', p, q, atan2(p,q));
-fprintf('Receding contact angle:  %.6f rad\n', theta_rec);
-fprintf('Advancing contact angle: %.6f rad\n', theta_adv);
-fprintf('CAH interval: [%.6f, %.6f] rad\n', theta_rec, theta_adv);
+% Display the results.
+fprintf( ...
+    'Direction: atan2(%d,%d) = %.6f rad\n', ...
+    p,q,atan2(p,q));
+fprintf( ...
+    'Receding contact angle:  %.6f rad\n', ...
+    theta_rec);
+fprintf( ...
+    'Advancing contact angle: %.6f rad\n', ...
+    theta_adv);
+fprintf( ...
+    'CAH interval: [%.6f, %.6f] rad\n', ...
+    theta_rec,theta_adv);
