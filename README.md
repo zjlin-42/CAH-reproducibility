@@ -41,4 +41,4 @@ The following output files are saved in the current MATLAB folder:
 ```
 
 This reduced-resolution example is intended to demonstrate the computational workflow. 
-The numerical experiments reported in the manuscript were performed at a higher spatial resolution.
+The spatial resolution can be increased to `N = 512` to reproduce the resolution used in the manuscript.
