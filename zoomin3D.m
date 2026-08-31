@@ -237,7 +237,7 @@ u=(u>0);
 % save('3D_'+string(direction)+'_'+string(p)+'_'+string(q)+'_'+regexprep(sprintf('%.0e',time_step),'e([-+])0*(\d+)','e$1$2')+'_zoomin.mat','K','mean_mid_x','center_x','final_contact_angle','record_x_mid','record_x','D1','D51','D3','u','isoD1','isoD51','isoD3','fig_foothill','foothill','-v7.3')
 
 % Save only the necessary
-save('3D_'+string(direction)+'_'+string(p)+'_'+string(q)+'_'+regexprep(sprintf('%.0e',time_step),'e([-+])0*(\d+)','e$1$2')+'_zoomin.mat','K','mean_mid_x','center_x','final_contact_angle','record_x_mid','record_x','D1','D51','D3','u','fig_foothill','foothill','-v7.3')
+save('3D_'+string(direction)+'_'+string(p)+'_'+string(q)+'_'+regexprep(sprintf('%.0e',time_step),'e([-+])0*(\d+)','e$1$2')+'_zoomin.mat','K','mean_mid_x','center_x','final_contact_angle','record_x_mid','record_x','D1','D51','D3','u','fig_foothill','foothill','convergence','-v7.3')
 
 
 close all;
