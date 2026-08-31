@@ -41,4 +41,4 @@ The following output files are saved in the current MATLAB folder:
 ```
 
 This reduced-resolution example is intended to demonstrate the computational workflow. 
-The spatial resolution can be increased to `N = 512` to reproduce the resolution used in the manuscript.
+The spatial resolution can be increased to `N = 512` with `tau = 1e-3` to reproduce the resolution used in the manuscript.
